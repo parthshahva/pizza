@@ -1,7 +1,11 @@
 class Pizza
   attr_accessor :toppings
-  def initialize(toppings)
+  def initialize(toppings=nil)
     @toppings = toppings
+    cheese = Topping.new("cheese", vegetarian=true)
+    if @toppings==nil
+      @toppings = [cheese]
+    end
   end
 end
 
